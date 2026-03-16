@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sustentabilidade no Paraná</title>
+    <!-- Link para o CSS (arquivo separado) -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- CABEÇALHO / MENU FIXO - Fica sempre visível no topo -->
+    <header class="cabecalho">
+        <nav class="menu">
+            <!-- Logo do site -->
+            <div class="logo">
+                <span class="logo-texto">🌿 Equilíbrio Sustentável</span>
+            </div>
+            <!-- Links do menu - cada um leva a uma seção -->
+            <ul class="menu-lista">
+                <li><a href="#inicio" class="menu-link">Início</a></li>
+                <li><a href="#cenario" class="menu-link">Cenário</a></li>
+                <li><a href="#agricultura" class="menu-link">Agricultura</a></li>
+                <li><a href="#industria" class="menu-link">Indústria</a></li>
+                <li><a href="#humano" class="menu-link">Fator Humano</a></li>
+                <li><a href="#tecnologia" class="menu-link">Tecnologia</a></li>
+                <li><a href="#conclusao" class="menu-link">Conclusão</a></li>
+            </ul>
+            <!-- Menu hamburguer para mobile (aparece só no celular) -->
+            <div class="menu-hamburguer" onclick="toggleMenu()">
+                <span class="barra"></span>
+                <span class="barra"></span>
+                <span class="barra"></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL DO SITE -->
+    <main>
+        <!-- SLIDE 1: PÁGINA INICIAL / TÍTULO -->
+        <section id="inicio" class="section inicio">
+            <div class="container">
+                <h1 class="titulo-principal">EQUILÍBRIO SUSTENTÁVEL: <span>PRODUZIR MAIS, POLUIR MENOS</span></h1>
+                <p class="subtitulo">O desafio e as oportunidades do Paraná no século XXI</p>
+                <!-- Elemento decorativo com degrade -->
+                <div class="decoracao-degrade"></div>
+                <!-- Card interativo que muda de cor ao clicar -->
+                <div class="card-interativo" onclick="mudarCor(this)">
+                    <p>🌱 Clique aqui e veja a mágica acontecer! 🌱</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 2: CENÁRIO PARANAENSE -->
+        <section id="cenario" class="section cenario">
+            <div class="container">
+                <h2 class="titulo-secao">🌎 O CENÁRIO PARANAENSE</h2>
+                <div class="card-container">
+                    <!-- Cards com as informações -->
+                    <div class="card" onclick="mudarCor(this)">
+                        <h3>CONTEXTO:</h3>
+                        <p>Somos um dos maiores produtores de grãos e proteína animal do Brasil.</p>
+                    </div>
+                    <div class="card" onclick="mudarCor(this)">
+                        <h3>CONFLITO:</h3>
+                        <p>Como expandir as fábricas e lavouras sem comprometer a Mata Atlântica e os nossos rios (como o Iguaçu e o Tibagi)?</p>
+                    </div>
+                    <div class="card" onclick="mudarCor(this)">
+                        <h3>META:</h3>
+                        <p>Romper a ideia de que "ou se produz, ou se preserva". O futuro exige os dois.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 3: AGRICULTURA SUSTENTÁVEL -->
+        <section id="agricultura" class="section agricultura">
+            <div class="container">
+                <h2 class="titulo-secao">🌱 AÇÃO 1 - AGRICULTURA SUSTENTÁVEL</h2>
+                <div class="conteudo-grid">
+                    <!-- Item 1: Agricultura de Precisão -->
+                    <div class="grid-item" onclick="mudarCor(this)">
+                        <h3>🚜 Agricultura de Precisão</h3>
+                        <p>Uso de drones e sensores para aplicar agrotóxicos apenas onde é necessário, evitando a contaminação do solo e lençóis freáticos.</p>
+                    </div>
+                    <!-- Item 2: Plantio Direto -->
+                    <div class="grid-item" onclick="mudarCor(this)">
+                        <h3>🌾 Plantio Direto</h3>
+                        <p>Técnica que nasceu com força aqui no PR, mantendo a palha no solo para evitar erosão e reter carbono.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 4: INDÚSTRIA LIMPA -->
+        <section id="industria" class="section industria">
+            <div class="container">
+                <h2 class="titulo-secao">🏭 AÇÃO 2 - INDÚSTRIA LIMPA E LOGÍSTICA VERDE</h2>
+                <div class="conteudo-grid">
+                    <div class="grid-item" onclick="mudarCor(this)">
+                        <h3>⚡ Eficiência Energética</h3>
+                        <p>Substituição de combustíveis fósseis por biomassa e energia solar nas fábricas.</p>
+                    </div>
+                    <div class="grid-item" onclick="mudarCor(this)">
+                        <h3>🔄 Logística Reversa</h3>
+                        <p>Empresas paranaenses que recolhem suas embalagens pós-consumo, reduzindo o volume de lixo nos aterros.</p>
+                    </div>
+                    <div class="grid-item" onclick="mudarCor(this)">
+                        <h3>💧 Tratamento de Efluentes</h3>
+                        <p>Rígido controle para que a água usada na produção industrial retorne limpa aos rios.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 5: FATOR HUMANO E A CLT -->
+        <section id="humano" class="section humano">
+            <div class="container">
+                <h2 class="titulo-secao">👥 FATOR HUMANO E A CLT</h2>
+                <div class="conteudo-grid">
+                    <div class="grid-item" onclick="mudarCor(this)">
+                        <h3>🛡️ Segurança do Trabalho</h3>
+                        <p>O cumprimento das Normas Regulamentadoras (NRs) da CLT garante que o aumento da produção não ocorra à custa da saúde do funcionário.</p>
+                    </div>
+                    <div class="grid-item" onclick="mudarCor(this)">
+                        <h3>⚖️ Direitos e Sustentabilidade Social</h3>
+                        <p>Empresas que respeitam a jornada de trabalho e investem em treinamento criam um ambiente produtivo mais eficiente e menos propenso a erros que causam desastres ambientais.</p>
+                    </div>
+                    <div class="grid-item" onclick="mudarCor(this)">
+                        <h3>🤝 Trabalho Decente</h3>
+                        <p>O equilíbrio ambiental deve caminhar junto com a dignidade do trabalhador paranaense.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 6: TECNOLOGIA E INOVAÇÃO -->
+        <section id="tecnologia" class="section tecnologia">
+            <div class="container">
+                <h2 class="titulo-secao">💡 O PAPEL DA TECNOLOGIA E INOVAÇÃO</h2>
+                <div class="conteudo-grid">
+                    <div class="grid-item" onclick="mudarCor(this)">
+                        <h3>🐞 Biopesticidas</h3>
+                        <p>O uso de controle biológico (insetos "do bem") em vez de químicos pesados.</p>
+                    </div>
+                    <div class="grid-item" onclick="mudarCor(this)">
+                        <h3>☀️ Energia Renovável</h3>
+                        <p>O Paraná como líder em biogás (aproveitando dejetos da suinocultura para gerar energia).</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 7: CONCLUSÃO -->
+        <section id="conclusao" class="section conclusao">
+            <div class="container">
+                <h2 class="titulo-secao">🎯 CONCLUSÃO</h2>
+                <div class="conclusao-conteudo">
+                    <div class="card-conclusao" onclick="mudarCor(this)">
+                        <p>✨ O equilíbrio é possível através da ciência, da fiscalização e da consciência.</p>
+                    </div>
+                    <div class="card-conclusao" onclick="mudarCor(this)">
+                        <p>💰 Reduzir a poluição não é um gasto, é um investimento em eficiência.</p>
+                    </div>
+                    <div class="card-conclusao" onclick="mudarCor(this)">
+                        <p>📚 Nós, estudantes, somos os futuros técnicos, engenheiros e gestores que farão essa engrenagem girar de forma limpa.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer class="rodape">
+        <p>Trabalho escolar - 2º ano Ensino Médio | Sustentabilidade no Paraná</p>
+    </footer>
+
+    <!-- Link para o JavaScript (arquivo separado) -->
+    <script src="script.js"></script>
+</body>
+</html>

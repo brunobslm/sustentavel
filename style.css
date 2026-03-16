@@ -1,0 +1,309 @@
+/* ===== RESET BÁSICO ===== */
+/* Remove todas as margens e paddings padrão do navegador */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===== VARIÁVEIS DE CORES ===== */
+/* Fica mais fácil de mudar as cores depois */
+:root {
+    --verde-claro: #4CAF50;
+    --verde-escuro: #2E7D32;
+    --azul-claro: #64B5F6;
+    --azul-escuro: #1565C0;
+    --amarelo: #FFC107;
+    --branco: #FFFFFF;
+    --cinza-claro: #F5F5F5;
+    --cinza-escuro: #333333;
+}
+
+/* ===== ESTILOS GERAIS ===== */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--cinza-escuro);
+}
+
+/* Container para centralizar o conteúdo */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ===== CABEÇALHO E MENU ===== */
+.cabecalho {
+    background: linear-gradient(135deg, var(--verde-escuro), var(--azul-escuro));
+    /* Degradê verde para azul */
+    position: fixed;
+    /* Menu fixo no topo */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    /* Fica acima de outros elementos */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+}
+
+.logo-texto {
+    color: var(--branco);
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.menu-lista {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.menu-link {
+    color: var(--branco);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 15px;
+    border-radius: 25px;
+    transition: all 0.3s;
+    /* Efeito suave ao passar o mouse */
+}
+
+/* Efeito hover (quando passa o mouse) */
+.menu-link:hover {
+    background-color: var(--amarelo);
+    color: var(--cinza-escuro);
+    transform: translateY(-2px);
+    /* Levanta levemente */
+}
+
+/* Menu hamburguer - só aparece no mobile */
+.menu-hamburguer {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.barra {
+    width: 25px;
+    height: 3px;
+    background-color: var(--branco);
+    margin: 3px 0;
+    border-radius: 3px;
+}
+
+/* ===== SEÇÕES ===== */
+.section {
+    padding: 100px 0 60px;
+    /* Padding superior maior por causa do menu fixo */
+    min-height: 100vh;
+    /* Cada seção ocupa pelo menos a tela toda */
+    display: flex;
+    align-items: center;
+}
+
+/* Cores alternadas para as seções */
+.section:nth-child(odd) {
+    background: linear-gradient(135deg, var(--branco), var(--cinza-claro));
+}
+
+.section:nth-child(even) {
+    background: linear-gradient(135deg, var(--verde-claro), var(--azul-claro));
+}
+
+/* Seção Início - destaque especial */
+.inicio {
+    background: linear-gradient(135deg, var(--verde-escuro), var(--azul-escuro));
+    color: var(--branco);
+    text-align: center;
+}
+
+.titulo-principal {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+.titulo-principal span {
+    color: var(--amarelo);
+    display: block;
+    font-size: 2.5rem;
+}
+
+.subtitulo {
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+    opacity: 0.9;
+}
+
+/* ===== TÍTULOS DAS SEÇÕES ===== */
+.titulo-secao {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    text-align: center;
+    color: var(--verde-escuro);
+    position: relative;
+}
+
+/* Linha decorativa abaixo do título */
+.titulo-secao::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--verde-claro), var(--amarelo));
+    margin: 20px auto;
+    border-radius: 2px;
+}
+
+/* ===== CARDS E GRIDS ===== */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.card,
+.grid-item,
+.card-conclusao {
+    background: var(--branco);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+/* Efeito hover nos cards */
+.card:hover,
+.grid-item:hover,
+.card-conclusao:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    border-color: var(--amarelo);
+}
+
+/* Cards da conclusão em layout especial */
+.conclusao-conteudo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+/* ===== CARD INTERATIVO ESPECIAL ===== */
+.card-interativo {
+    background: linear-gradient(135deg, var(--amarelo), var(--verde-claro));
+    color: var(--cinza-escuro);
+    padding: 30px;
+    border-radius: 50px;
+    max-width: 400px;
+    margin: 40px auto;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: all 0.3s;
+    animation: pulse 2s infinite;
+    /* Animação de pulsar */
+}
+
+/* Animação de pulsar */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* ===== RODAPÉ ===== */
+.rodape {
+    background: linear-gradient(135deg, var(--cinza-escuro), #000);
+    color: var(--branco);
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+/* Tablet (até 768px) */
+@media (max-width: 768px) {
+    .menu-lista {
+        display: none;
+        /* Esconde o menu normal */
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: linear-gradient(135deg, var(--verde-escuro), var(--azul-escuro));
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        gap: 15px;
+    }
+
+    /* Menu ativo (quando clicar no hamburguer) */
+    .menu-lista.ativo {
+        display: flex;
+    }
+
+    .menu-hamburguer {
+        display: flex;
+        /* Mostra o menu hamburguer */
+    }
+
+    .titulo-principal {
+        font-size: 2rem;
+    }
+
+    .titulo-principal span {
+        font-size: 1.8rem;
+    }
+
+    .titulo-secao {
+        font-size: 2rem;
+    }
+
+    .card-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Celular (até 480px) */
+@media (max-width: 480px) {
+    .section {
+        padding: 80px 0 40px;
+    }
+
+    .titulo-principal {
+        font-size: 1.5rem;
+    }
+
+    .titulo-principal span {
+        font-size: 1.3rem;
+    }
+
+    .subtitulo {
+        font-size: 1.1rem;
+    }
+
+    .card,
+    .grid-item {
+        padding: 20px;
+    }
+}
